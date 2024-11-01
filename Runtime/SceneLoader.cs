@@ -37,7 +37,7 @@ namespace Strangeman.SceneHelper.Core
 
         private async Awaitable LoadAsync(string toLoad)
         {
-            float progress;
+            float lastProgress = 0;
 
             _sceneEventController.OnLoadingStarted();
 
@@ -48,14 +48,12 @@ namespace Strangeman.SceneHelper.Core
 
             while (_loader.progress < 0.9f)
             {
-                progress = Mathf.Clamp01(_loader.progress / 0.9f);
-                _sceneEventController.LoadingProgressed(progress);
+                UpdateProgress(ref lastProgress);
 
                 await Awaitable.NextFrameAsync();
             }
 
-            progress = Mathf.Clamp01(_loader.progress / 0.9f);
-            _sceneEventController.LoadingProgressed(progress);
+            UpdateProgress(ref lastProgress);
 
             while (!_loader.isDone)
             {
@@ -63,6 +61,18 @@ namespace Strangeman.SceneHelper.Core
             }
 
             _targetSceneConfig.DeregisterForLoad(_sceneEventController);
+        }
+
+        private void UpdateProgress(ref float lastProgress)
+        {
+            float progress = Mathf.Clamp01(_loader.progress / 0.9f);
+            var needsUpdate = lastProgress != progress ? true : false;
+
+            if (needsUpdate)
+            {
+                lastProgress = progress;
+                _sceneEventController.LoadingProgressed(lastProgress);
+            }
         }
 
         private void AllowLoad() => _loader.allowSceneActivation = true;

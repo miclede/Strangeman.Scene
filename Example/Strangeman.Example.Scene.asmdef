@@ -1,8 +1,11 @@
 {
-    "name": "com.strangeman.scenehelper.core",
-    "rootNamespace": "Strangeman.SceneHelper.Core",
+    "name": "com.strangeman.scene.example",
+    "rootNamespace": "Strangeman.SceneHelper.Example",
     "references": [
-        "GUID:a5358283307d1a149b9f3266af67608d"
+        "GUID:d314525c1d9e60b458bb6bdcf23afa98",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:a5358283307d1a149b9f3266af67608d",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

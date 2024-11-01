@@ -1,5 +1,10 @@
+## [1.1.1] 2024-11-01
+### Organization Update: Packaging & Folders
+- Updating Package information and folder structure
+- Better integration with other strangeman packages
+
 ## [1.0.1] - 2024-08-16
-### Bug Fix: SceneTransition
+### Bug Fix: Scene Transition
 - Fixed a bug that was not allowing transitions to finish when entering the loaded scene
 - Added some documentation and expaneded on transition example
 
