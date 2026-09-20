@@ -2,6 +2,7 @@ using Strangeman.Utils;
 using Strangeman.Utils.Service;
 using System;
 using System.Collections;
+using Strangeman.Utils.Bootstrap;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

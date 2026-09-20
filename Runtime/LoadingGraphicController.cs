@@ -1,6 +1,7 @@
 using Strangeman.Utils;
 using System;
 using System.Collections;
+using Strangeman.Utils.Bootstrap;
 using UnityEngine;
 
 namespace Strangeman.SceneHelper.Core
